@@ -20,6 +20,22 @@ def get_callsign(input_data):
         input_data = input_data.replace("flight level", "fl")
     if ("set course" in input_data):
         input_data = input_data.replace("set course", "setCourse")
+    if ("descending level" in input_data):
+        input_data = input_data.replace("descending level", "dl")
+    if ("climbing level" in input_data):
+        input_data = input_data.replace("climbing level", "cl")
+    if ("for" in input_data):
+        input_data = input_data.replace("for", "fr")
+    if ("proceed level" in input_data):
+        input_data = input_data.replace("proceed level", "pl")
+    if ("claiming level" in input_data):
+        input_data = input_data.replace("claiming level", "cl ")
+    if ("fly level" in input_data):
+        input_data = input_data.replace("fly level", "fl ")
+    if ("juliet" in input_data):
+        input_data = input_data.replace("juliet", "juliett ")
+    if ("  " in input_data):
+        input_data = input_data.replace("  ", " ")
 
     script_matched = sort_callsign.get_matches(input_data)
     delimiter = sort_callsign.delimiter(script_matched)
