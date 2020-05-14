@@ -58,7 +58,13 @@ def get_callsign(input_data):
 
     callsign = []
     for item in callsign_code:
-        if (len(item) >= 3):
+        new_item = ""
+        if (len(item) >= 10):
+            for i in range(10):
+                new_item += str(item[i])
+            callsign.append(new_item)
+            callsign.append(item.split(str(item[10]))[1:])
+        elif (len(item) >= 3):
             callsign.append(item)
 
     return callsign
